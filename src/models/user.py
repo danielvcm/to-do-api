@@ -53,3 +53,12 @@ class User(Table):
             self.created_at = result[0]["created_at"]
         else:
             raise ToDoException(f"User not found",404)
+    
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "user_name": self.user_name,
+            "password": self.password,
+            "created_at": self.created_at
+        }
