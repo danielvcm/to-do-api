@@ -18,7 +18,7 @@ class User(Table):
                     VALUES
                     ("{self.name}",
                     "{self.user_name}",
-                    {self.password});
+                    "{self.password}");
                     """
         try:
             self.insert(statement)
