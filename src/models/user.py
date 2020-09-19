@@ -53,12 +53,3 @@ class User(Table):
             self.created_at = result[0]["created_at"]
         else:
             raise ToDoException(f"User not found",404)
-    
-    def delete_user_by_id(self,id=None):
-        if not self.id:
-            self.id = id
-        statement = f"""
-                DELETE FROM `to_do`.`user`
-                WHERE `id` = {self.id};
-                """
-        self.update(statement)
