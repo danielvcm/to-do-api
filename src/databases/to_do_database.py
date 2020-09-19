@@ -28,6 +28,11 @@ class ToDoDatabase:
         else:
             raise ToDoException("A connection operation must be 'read' or 'write'",500)
     
+    def get_cursor(self,operation='read'):
+        if self.connection == None or ~self.connection.open:
+            self.connect(operation)
+        return self.connection.cursor()
+    
     def close_connection(self):
         if self.connection != None and self.connection.open:
             self.connection.close()
