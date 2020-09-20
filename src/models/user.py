@@ -2,11 +2,10 @@ from .table import Table
 from ..utils.to_do_exception import ToDoException
 import pymysql
 class User(Table):
-    def __init__(self,id=None,name=None,user_name=None,password=None, created_at=None):
+    def __init__(self,id=None,name=None,user_name=None,password=None):
         self.name = name
         self.user_name = user_name
         self.password = password
-        self.created_at = created_at
         self.table = 'user'
         super().__init__(id)
     
@@ -25,18 +24,17 @@ class User(Table):
         except pymysql.err.IntegrityError:
             raise ToDoException('User name already in use',400)
     
-    def find_by_id(self,id=None):
-        if not self.id:
-            self.id = id
+    def find_by_id(self,id):
+        
+        self.id = id
         query = f"""
                 SELECT * FROM `{self.schema}`.`{self.table}`
                 WHERE id = {self.id}
                 """
         self.find(query)
     
-    def find_by_user_name(self,user_name=None):
-        if not self.user_name:
-            self.user_name = user_name
+    def find_by_user_name(self,user_name):
+        self.user_name = user_name
         query = f"""
                 SELECT * FROM `{self.schema}`.`{self.table}`
                 WHERE user_name = "{self.user_name}"
@@ -50,7 +48,6 @@ class User(Table):
             self.name = result[0]["name"]
             self.user_name = result[0]["user_name"]
             self.password = result[0]["password"]
-            self.created_at = result[0]["created_at"]
         else:
             raise ToDoException(f"User not found",404)
     
@@ -60,5 +57,4 @@ class User(Table):
             "name": self.name,
             "user_name": self.user_name,
             "password": self.password,
-            "created_at": self.created_at
         }
