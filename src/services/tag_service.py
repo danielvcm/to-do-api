@@ -1,4 +1,5 @@
 from ..models.tag import Tag
+from ..utils.to_do_exception import ToDoException
 class TagService:
     @staticmethod
     def get_by_id_and_id_user(id,id_user):
@@ -27,7 +28,10 @@ class TagService:
     @staticmethod
     def delete_tag(tag_request):
         tag = TagService.verify_and_get_tag(tag_request)
-        tag.delete_by_id()
+        if tag.name == tag_request.name.upper():
+            tag.delete_by_id()
+        else:
+            raise ToDoException("tag not found", 404)
 
     @staticmethod
     def verify_and_get_tag(tag_request):
