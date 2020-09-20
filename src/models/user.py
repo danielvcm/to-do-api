@@ -6,7 +6,7 @@ class User(Table):
         self.name = name
         self.user_name = user_name
         self.password = password
-        self.table = 'user'
+        self.table = 'users'
         super().__init__(id)
     
     def insert_one(self):
