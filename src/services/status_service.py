@@ -1,4 +1,5 @@
 from ..models.status import Status
+from ..utils.to_do_exception import ToDoException
 class StatusService:
     @staticmethod
     def get_by_id_and_id_user(id,id_user):
@@ -27,7 +28,10 @@ class StatusService:
     @staticmethod
     def delete_status(status_request):
         status = StatusService.verify_and_get_status(status_request)
-        status.delete_by_id()
+        if status.name == status_request.name.upper():
+            status.delete_by_id()
+        else:
+            raise ToDoException('status not found',404)
 
     @staticmethod
     def verify_and_get_status(status_request):
