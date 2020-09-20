@@ -3,13 +3,13 @@ load_dotenv()
 import uvicorn
 from fastapi import  FastAPI, Request
 from fastapi.responses import JSONResponse
-from src.routes.session_route import SessionRoute
+from src.routes.management_route import ManagementRoute
 from src.utils.to_do_exception import ToDoException
-
 
 to_do_api = FastAPI()
 
-to_do_api.include_router(SessionRoute.router)
+for router in ManagementRoute.routers:
+    to_do_api.include_router(router)
 
 @to_do_api.exception_handler(ToDoException)
 async def to_do_exception_handler(request: Request, exc: ToDoException):
