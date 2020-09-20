@@ -29,3 +29,5 @@ class Table:
     def update(self,statement, values = None):
         self.insert(statement,values)
 
+    def delete(self,statement, values = None):
+        self.insert(statement,values)
