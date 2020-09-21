@@ -27,38 +27,38 @@ Navegue até a url http://localhost:5000/docs em seu browser para acessar o swag
 ## User <a name="user"></a>
 **Colunas**<br/>
 
-    id (chave primária)<br/>
-    name<br/>
-    user_name (único)<br/>
-    password<br/>
+    id (chave primária)
+    name
+    user_name (único)
+    password
 
 ## Status <a name="status"></a>
 **Colunas**<br/>
 
-    id (chave primária)<br/>
-    id_user (chave extrangeira)<br/>
-    name<br/>
+    id (chave primária)
+    id_user (chave extrangeira)
+    name
 
 ## Tags <a name="tags"></a>
 **Colunas**<br/>
 
-    id (chave primária)<br/>
-    id_user (chave extrangeira)<br/>
-    name<br/>
+    id (chave primária)
+    id_user (chave extrangeira)
+    name
 
 ## To Do <a name="to-do"></a>
 **Colunas**<br/>
 
-    id (chave primária)<br/>
-    id_user (chave extrangeira)<br/>
-    id_status (chave extrangeira)<br/>
-    name<br/>
-    description (optional)<br/>
-    due date (optional)<br/>
+    id (chave primária)
+    id_user (chave extrangeira)
+    id_status (chave extrangeira)
+    name
+    description (optional)
+    due date (optional)
 
 ## To Do Tags <a name="to-do-tags"></a>
 **Colunas**<br/>
 
-    id (chave primária)<br/>
-    id_to_do (chave extrangeira)<br/>
-    id_tag (chave extrangeira)<br/>
+    id (chave primária)
+    id_to_do (chave extrangeira)
+    id_tag (chave extrangeira)
