@@ -27,38 +27,38 @@ Navegue até a url http://localhost:5000/docs em seu browser para acessar o swag
 ## User <a name="user"></a>
 **Colunas**<br/>
 
-    id *(chave primária)*<br/>
+    id (chave primária)<br/>
     name<br/>
-    user_name *(único)*<br/>
+    user_name (único)<br/>
     password<br/>
 
 ## Status <a name="status"></a>
 **Colunas**<br/>
 
-    id *(chave primária)*<br/>
-    id_user *(chave extrangeira)*<br/>
+    id (chave primária)<br/>
+    id_user (chave extrangeira)<br/>
     name<br/>
 
 ## Tags <a name="tags"></a>
 **Colunas**<br/>
 
-    id *(chave primária)*<br/>
-    id_user *(chave extrangeira)*<br/>
+    id (chave primária)<br/>
+    id_user (chave extrangeira)<br/>
     name<br/>
 
 ## To Do <a name="to-do"></a>
 **Colunas**<br/>
 
-    id *(chave primária)*<br/>
-    id_user *(chave extrangeira)*<br/>
-    id_status *(chave extrangeira)*<br/>
+    id (chave primária)<br/>
+    id_user (chave extrangeira)<br/>
+    id_status (chave extrangeira)<br/>
     name<br/>
-    description *(optional)*<br/>
-    due date *(optional)*<br/>
+    description (optional)<br/>
+    due date (optional)<br/>
 
 ## To Do Tags <a name="to-do-tags"></a>
 **Colunas**<br/>
 
-    id *(chave primária)*<br/>
-    id_to_do *(chave extrangeira)*<br/>
-    id_tag *(chave extrangeira)*<br/>
+    id (chave primária)<br/>
+    id_to_do (chave extrangeira)<br/>
+    id_tag (chave extrangeira)<br/>
