@@ -40,3 +40,13 @@ class StatusService:
         status = Status()
         status.find_by_id_and_id_user(status_request.id,status_request.id_user)
         return status
+    
+    @staticmethod
+    def get_or_create_status(request):
+        try:
+            status = Status()
+            status.find_by_name_and_id_user(request.status.upper(),request.id_user)
+        except ToDoException:
+            status = Status(id_user = request.id_user, name = request.status.upper())
+            status.insert_one()
+        return status
