@@ -2,13 +2,13 @@ To Do API
 =========
 Sumário
 -------
-1. [Como Usar](how-to)
-2. [Tabelas](tables)
-    1. [User](user)
-    2. [Status](status)
-    3. [Tags](tags)
-    4. [To Do](to-do)
-    5. [To Do Tags](to-do-tags)
+1. [Como Usar](#how-to)
+2. [Tabelas](#tables)
+    1. [User](#user)
+    2. [Status](#status)
+    3. [Tags](#tags)
+    4. [To Do](#to-do)
+    5. [To Do Tags](#to-do-tags)
 
 # Como usar <a name="how-to"></a>
 
