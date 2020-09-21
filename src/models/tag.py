@@ -32,7 +32,7 @@ class Tag(Table):
 
         query = f"""
                 SELECT * FROM `{self.schema}`.`{self.table}`
-                WHERE name = {self.name} AND id_user = {self.id_user}
+                WHERE name = '{self.name}' AND id_user = {self.id_user}
                 """
         self.find_one(query)
     
