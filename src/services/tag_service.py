@@ -40,3 +40,13 @@ class TagService:
         tag = Tag()
         tag.find_by_id_and_id_user(tag_request.id,tag_request.id_user)
         return tag
+    
+    @staticmethod
+    def get_or_create_tag(request,id_user):
+        try:
+            tag = Tag()
+            tag.find_by_name_and_id_user(request.upper(),id_user)
+        except ToDoException:
+            tag = Tag(id_user = id_user,name=request.upper())
+            tag.insert_one()
+        return tag
