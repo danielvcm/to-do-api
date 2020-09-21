@@ -1,5 +1,6 @@
 from ..models.status import Status
 from ..utils.to_do_exception import ToDoException
+from .user_service import UserService
 class StatusService:
     @staticmethod
     def get_by_id_and_id_user(id,id_user):
@@ -15,6 +16,7 @@ class StatusService:
     
     @staticmethod
     def create_status(new_status_request):
+        UserService.check_user(new_status_request.id_user)
         status = Status(id_user = new_status_request.id_user,name = new_status_request.name.upper())
         status.insert_one()
         return status
