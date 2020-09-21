@@ -16,4 +16,4 @@ async def to_do_exception_handler(request: Request, exc: ToDoException):
     return JSONResponse(content= exc.to_dict(),status_code=exc.status_code)
 
 if __name__ == "__main__":
-    uvicorn.run("app:to_do_api", host="127.0.0.1", port=5000, log_level="info",reload=True)
+    uvicorn.run("app:to_do_api", host="127.0.0.1", port=5000, log_level="info")
