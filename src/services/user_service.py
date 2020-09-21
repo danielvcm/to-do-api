@@ -19,5 +19,9 @@ class UserService:
         if real_password == login_request.password:
             return user
         raise ToDoException('Incorrect password',400)
-
+    
+    @staticmethod
+    def check_user(id):
+        user = User()
+        user.find_by_id(id)
         
