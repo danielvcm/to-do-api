@@ -27,7 +27,9 @@ class Table:
         self.database.close_connection()
     
     def update(self,statement, values = None):
-        self.insert(statement,values)
+        self.execute(statement, values, 'write')
+        self.database.connection.commit()
+        self.database.close_connection()
 
     def delete(self,statement, values = None):
-        self.insert(statement,values)
+        self.update(statement,values)
