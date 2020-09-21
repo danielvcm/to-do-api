@@ -7,7 +7,7 @@ class SessionRoute:
     router = APIRouter()
 
     @staticmethod
-    @router.post(path="/session/new_user",response_model=UserResponse)
+    @router.post(path="/session/new-user",response_model=UserResponse)
     async def new_user(new_user_request: NewUserRequest):
         response = await SessionController.create_user(new_user_request)
         return response

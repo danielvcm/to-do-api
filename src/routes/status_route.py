@@ -10,7 +10,7 @@ class StatusRoute:
     router = APIRouter()
 
     @staticmethod
-    @router.post(path="/status/new_status",response_model=StatusResponse)
+    @router.post(path="/status/new",response_model=StatusResponse)
     async def new_status(new_status_request: NewStatusRequest):
         response = await StatusController.create_status(new_status_request)
         return response

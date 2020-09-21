@@ -10,7 +10,7 @@ class TagRoute:
     router = APIRouter()
 
     @staticmethod
-    @router.post(path="/tag/new_tag",response_model=TagResponse)
+    @router.post(path="/tag/new",response_model=TagResponse)
     async def new_tag(new_tag_request: NewTagRequest):
         response = await TagController.create_tag(new_tag_request)
         return response
@@ -34,7 +34,7 @@ class TagRoute:
         return response
 
     @staticmethod
-    @router.delete('/tag',)
+    @router.delete('/tag')
     async def delete_tag_name(tag_request: TagRequest):
         response = await TagController.delete_tag(tag_request)
         return JSONResponse(content= response,status_code=200)
